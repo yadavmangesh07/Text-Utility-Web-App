@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 export default function NavBar(props) {
   return (
     <>
-    <nav class={`navbar bg-${props.mode1} border-bottom border-body" `}>
+    <nav className={`navbar bg-${props.mode1} border-bottom border-body" `}>
   
       <nav className="navbar navbar-expand-lg bg-body-primary ">
         <div className="container-fluid " >
@@ -30,7 +30,7 @@ export default function NavBar(props) {
         </div>
       </nav>
             <div className="form-check form-switch mx-3" >
-              <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+              <input className="form-check-input " onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
               <label className={`form-check-label text-${props.textColor}`} htmlFor="flexSwitchCheckDefault">Enable {props.buttonText} Mode</label>
             </div>
 </nav>

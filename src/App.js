@@ -27,9 +27,9 @@ function App() {
 
   return (
     <>
-      <NavBar title="TextUtils" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
+      <NavBar title="Textify" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
       <div className="container">
-        <TextForm heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} />
+        <TextForm heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} mode1={mode}/>
       </div>
     </>
   );

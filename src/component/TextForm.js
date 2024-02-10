@@ -72,7 +72,7 @@ export default function TextForm(props) {
           <h1 className='my-3'>{props.heading}</h1>
 
           <div className="mb-3" my-3="true">
-            <textarea
+            <textarea style={{backgroundColor:props.mode1==='dark'?'#F0F0F0':'white'}}
               className="form-control color-black"
               value={text}
               placeholder="Enter Your Text Here.."
