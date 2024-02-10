@@ -95,7 +95,7 @@ export default function TextForm(props) {
             <button type="button" onClick={clearTextField} className="btn btn-success mx-2">
               Clear Text Field
             </button>
-            <button type="button" onClick={copyToClipboard} className="btn btn-success mx-2">
+            <button type="button" onClick={copyToClipboard} className="btn btn-success mx-1.5">
               Copy to Clipboard
             </button>
             <button type="button" onClick={makeBold} className="btn btn-success mx-2">
