@@ -44,6 +44,7 @@ export default function TextForm(props) {
   const handleTextChange = (event) => {
     const inputText = event.target.value;
     setText(inputText);
+    
   };
 
   const countWordsAndCharacters = (inputText) => {
@@ -72,7 +73,7 @@ export default function TextForm(props) {
           <h1 className='my-3'>{props.heading}</h1>
 
           <div className="mb-3" my-3="true">
-            <textarea style={{backgroundColor:props.mode1==='dark'?'#F0F0F0':'white'}}
+            <textarea style={{backgroundColor:props.mode1==='dark'?'#A2A8B4':'white',fontSize:'17px'}}
               className="form-control color-black"
               value={text}
               placeholder="Enter Your Text Here.."
