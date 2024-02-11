@@ -126,6 +126,13 @@ export default function TextForm(props) {
       setPreviewClicked(true);
       setPreviewedText(text);
     }
+    
+    }
+    const removeExtraSpaces = () =>{
+      let newText=text.replace(/\s+/g, ' ').trim();
+      
+      setText(newText);
+      
     }
 
 
@@ -154,20 +161,23 @@ export default function TextForm(props) {
             <button type="button" onClick={upperCase} className="btn btn-success">
               Convert To UpperCase
             </button>
-            <button type="button" onClick={lowerCase} className="btn btn-success mx-2">
+            <button type="button" onClick={lowerCase} className="btn btn-success">
               Convert To LowerCase
             </button>
-            <button type="button" onClick={preview} className="btn btn-success mx-1.5">
+            <button type="button" onClick={preview} className="btn btn-success ">
               Preview to read
             </button>
-            <button type="button" onClick={clearTextField} className="btn btn-success mx-2">
+            <button type="button" onClick={clearTextField} className="btn btn-success">
               Clear Text Field
             </button>
-            <button type="button" onClick={copyToClipboard} className="btn btn-success mx-1.5">
+            <button type="button" onClick={copyToClipboard} className="btn btn-success ">
               Copy to Clipboard
             </button>
-            <button type="button" onClick={makeBold} className="btn btn-success mx-2">
+            <button type="button" onClick={makeBold} className="btn btn-success">
               Make Bold
+            </button>
+            <button type="button" onClick={removeExtraSpaces} className="btn btn-success">
+              Remove Extra Spaces
             </button>
           </div>
         </div>
@@ -179,9 +189,11 @@ export default function TextForm(props) {
           {wordCount} words & {characterCount} characters (ignoring spaces)
         </p>
         <p>{0.008 * wordCount} minutes to read at average speed</p>
-        <div style={{ fontWeight: isbold ? 'bold' : 'normal' }}>
+        <div style={{ fontWeight: isbold ? 'bold' : 'lighter'}}>
+       
 
         {previewClicked && <p>{previewedText}</p>}
+       
         </div>
       </div>
 </div>    
