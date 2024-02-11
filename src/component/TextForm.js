@@ -34,7 +34,15 @@ export default function TextForm(props) {
     else{
 
       setbold(!isbold);
-      props.showAlert('Converted To Bold','success');
+      if (!isbold) {
+        
+        props.showAlert('Converted To Bold','success');
+      }
+      else{
+        props.showAlert('Converted To Lighter','success');
+
+
+      }
     }
 
   }
@@ -103,16 +111,23 @@ export default function TextForm(props) {
   };
 
   const countWordsAndCharacters = (inputText) => {
-   
+    // Check if inputText is empty
+    if (!inputText.trim()) {
+        return {
+            wordCount: 0,
+            characterCount: 0
+        };
+    }
 
     const words = inputText.split(/\s+/);
     const characters = inputText.replace(/\s/g, '');
 
     return {
-      wordCount: words.length,
-      characterCount: characters.length,
+        wordCount: words.length,
+        characterCount: characters.length,
     };
-  };
+};
+
 
   const preview = () => {
     if (text==='') {
@@ -126,12 +141,21 @@ export default function TextForm(props) {
       setPreviewClicked(true);
       setPreviewedText(text);
     }
-    
+
     }
     const removeExtraSpaces = () =>{
-      let newText=text.replace(/\s+/g, ' ').trim();
-      
-      setText(newText);
+      if (text==='') {
+        props.showAlert('Emty Text Field','warning');
+  
+  
+        
+      }
+      else{
+        let newText=text.replace(/\s+/g, ' ').trim();
+        
+        setText(newText);
+
+      }
       
     }
 
@@ -157,7 +181,7 @@ export default function TextForm(props) {
             ></textarea>
           </div>
 
-          <div className="primary-buttons">
+          <div className="primary-buttons"style={{display:'flex',justifyContent:'space-between'}}>
             <button type="button" onClick={upperCase} className="btn btn-success">
               Convert To UpperCase
             </button>
