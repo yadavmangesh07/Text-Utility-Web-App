@@ -12,17 +12,17 @@ function App() {
   const [btnText, setBtnText] = useState('Dark');
   const [isBold, setIsBold] = useState(false);
   const [alert, setAlert] = useState(null);
-const showAlert=(message,type)=>{
-  setAlert({
-    msg:message,
-    typ:type
-  });
-  setTimeout(() => {
-    setAlert(null);
-    
-  }, 1600);
-}
-  
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      typ: type
+    });
+    setTimeout(() => {
+      setAlert(null);
+
+    }, 1600);
+  }
+
 
   const changeMode = () => {
     if (mode === 'dark') {
@@ -31,23 +31,23 @@ const showAlert=(message,type)=>{
       setBtnText('Dark');
       document.body.style.backgroundColor = "white";
       document.body.style.color = "#212529";
-      showAlert('Light Mode Enabled','success');
+      showAlert('Light Mode Enabled', 'success');
     } else {
       setMode('dark');
       setText('light');
       setBtnText('Light');
       document.body.style.backgroundColor = "#212529";
       document.body.style.color = "white";
-      showAlert('Dark Mode Enabled','success');
+      showAlert('Dark Mode Enabled', 'success');
     }
   };
 
   return (
     <>
       <NavBar title="Textify" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
-      <Alert alert={alert}/>
+      <Alert alert={alert} />
       <div className="container">
-        <TextForm showAlert={showAlert} heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} mode1={mode}/>
+        <TextForm showAlert={showAlert} heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} mode1={mode} />
       </div>
     </>
   );
