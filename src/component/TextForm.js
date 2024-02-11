@@ -10,11 +10,13 @@ export default function TextForm(props) {
   const upperCase = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert('Text Converted To Upper Case','success')
+    props.showAlert('Converted To Upper Case','success');
     
   };
   const makeBold=()=>{
     setbold(!isbold);
+    props.showAlert('Converted To Bold','success');
+
   }
   const copyToClipboard = () => {
     // Create a temporary input element
@@ -30,12 +32,16 @@ export default function TextForm(props) {
 
     // Remove the temporary input element
     document.body.removeChild(tempInput);
+    props.showAlert('Text Copied To ClipBoard','success');
+
   };
 
 
   const lowerCase = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert('Converted To Lower Case','success');
+
   };
 
   const clearTextField = () => {
