@@ -20,7 +20,7 @@ const showAlert=(message,type)=>{
   setTimeout(() => {
     setAlert(null);
     
-  }, 1000);
+  }, 1700);
 }
   
 

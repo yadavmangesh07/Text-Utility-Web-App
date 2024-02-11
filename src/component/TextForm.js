@@ -8,46 +8,92 @@ export default function TextForm(props) {
   const[isbold,setbold]=useState(false);
 
   const upperCase = () => {
-    let newText = text.toUpperCase();
-    setText(newText);
-    props.showAlert('Converted To Upper Case','success');
+    if (text==='') {
+      props.showAlert('Empty Text Field','warning');
+
+
+      
+    }
+    else{
+      let newText = text.toUpperCase();
+      setText(newText);
+      props.showAlert('Converted To Upper Case','success');
+      
+    }
+    
+   
     
   };
   const makeBold=()=>{
-    setbold(!isbold);
-    props.showAlert('Converted To Bold','success');
+    if (text==='') {
+      props.showAlert('Empty Text Field','warning');
+
+
+      
+    }
+    else{
+
+      setbold(!isbold);
+      props.showAlert('Converted To Bold','success');
+    }
 
   }
   const copyToClipboard = () => {
-    // Create a temporary input element
-    const tempInput = document.createElement('textarea');
-    tempInput.value = text;
+    if (text==='') {
+      props.showAlert('Empty Text Field','warning');
 
-    // Append the input element to the DOM
-    document.body.appendChild(tempInput);
 
-    // Select and copy the text inside the input
-    tempInput.select();
-    document.execCommand('copy');
+      
+    }
+    else{
 
-    // Remove the temporary input element
-    document.body.removeChild(tempInput);
-    props.showAlert('Text Copied To ClipBoard','success');
+      // Create a temporary input element
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+  
+      // Append the input element to the DOM
+      document.body.appendChild(tempInput);
+  
+      // Select and copy the text inside the input
+      tempInput.select();
+      document.execCommand('copy');
+  
+      // Remove the temporary input element
+      document.body.removeChild(tempInput);
+      props.showAlert('Text Copied To ClipBoard','success');
+    }
 
   };
 
 
   const lowerCase = () => {
-    let newText = text.toLowerCase();
-    setText(newText);
-    props.showAlert('Converted To Lower Case','success');
+    if (text==='') {
+      props.showAlert('Empty Text Field','warning');
+
+
+      
+    }
+    else{
+
+      let newText = text.toLowerCase();
+      setText(newText);
+      props.showAlert('Converted To Lower Case','success');
+    }
+    
 
   };
 
   const clearTextField = () => {
-    let temp = '';
-    setText(temp);
-    setPreviewedText(temp);
+    if (text!=='') {
+      let temp = '';
+      setText(temp);
+      setPreviewedText(temp);
+      props.showAlert('Text Field Cleared','success');
+
+
+      
+    }
+
   };
 
   const handleTextChange = (event) => {
@@ -57,6 +103,8 @@ export default function TextForm(props) {
   };
 
   const countWordsAndCharacters = (inputText) => {
+   
+
     const words = inputText.split(/\s+/);
     const characters = inputText.replace(/\s/g, '');
 
@@ -67,9 +115,19 @@ export default function TextForm(props) {
   };
 
   const preview = () => {
-    setPreviewClicked(true);
-    setPreviewedText(text);
-  };
+    if (text==='') {
+      props.showAlert('Enter Text To Preview','warning');
+
+
+      
+    }
+    else{
+
+      setPreviewClicked(true);
+      setPreviewedText(text);
+    }
+    }
+
 
   
   const { wordCount, characterCount } = countWordsAndCharacters(text);
@@ -82,7 +140,7 @@ export default function TextForm(props) {
           <h1 className='my-3'>{props.heading}</h1>
 
           <div className="mb-3" my-3="true">
-            <textarea style={{backgroundColor:props.mode1==='dark'?'#A2A8B4':'white',fontSize:'17px'}}
+            <textarea style={{backgroundColor:props.mode1==='dark'?'#D1E7DE':'white',fontSize:'17px'}}
               className="form-control color-black"
               value={text}
               placeholder="Enter Your Text Here.."
