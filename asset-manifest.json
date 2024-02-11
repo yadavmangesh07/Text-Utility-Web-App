@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yadavmangesh07/Text-Utility-Web-App/static/css/main.e41e4383.css",
+    "main.js": "/yadavmangesh07/Text-Utility-Web-App/static/js/main.a1a0b073.js",
+    "static/js/592.7f72a991.chunk.js": "/yadavmangesh07/Text-Utility-Web-App/static/js/592.7f72a991.chunk.js",
+    "index.html": "/yadavmangesh07/Text-Utility-Web-App/index.html",
+    "main.e41e4383.css.map": "/yadavmangesh07/Text-Utility-Web-App/static/css/main.e41e4383.css.map",
+    "main.a1a0b073.js.map": "/yadavmangesh07/Text-Utility-Web-App/static/js/main.a1a0b073.js.map",
+    "592.7f72a991.chunk.js.map": "/yadavmangesh07/Text-Utility-Web-App/static/js/592.7f72a991.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e41e4383.css",
+    "static/js/main.a1a0b073.js"
+  ]
+}
