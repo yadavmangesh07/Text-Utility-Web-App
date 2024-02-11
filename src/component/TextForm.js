@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 export default function TextForm(props) {
   const [text, setText] = useState('');
   const [previewedText, setPreviewedText] = useState('');
@@ -9,6 +10,8 @@ export default function TextForm(props) {
   const upperCase = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert('Text Converted To Upper Case','success')
+    
   };
   const makeBold=()=>{
     setbold(!isbold);
