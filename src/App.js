@@ -44,7 +44,7 @@ function App() {
 
   return (
     <>
-      <NavBar title="Textify" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
+      <NavBar title="TextiFy" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
       <Alert alert={alert} />
       <div className="container">
         <TextForm showAlert={showAlert} heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} mode1={mode} />
