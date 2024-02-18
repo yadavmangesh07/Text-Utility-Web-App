@@ -1,7 +1,7 @@
 import './App.css';
-import NavBar from './component/NavBar';
-import TextForm from './component/TextForm';
-import Alert from './component/Alert';
+import NavBar from './components/NavBar';
+import TextForm from './components/TextForm';
+import Alert from './components/Alert';
 import React, { useState } from 'react';
 
 
