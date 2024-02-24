@@ -3,7 +3,12 @@ import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import About from './components/About'; 
 
+function Home() {
+  return <TextForm heading="Enter The Text To Be Analyzed" />;
+}
 
 
 function App() {
@@ -44,11 +49,23 @@ function App() {
 
   return (
     <>
-      <NavBar title="TextiFy" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
+    <Router>
+      <>
+        <NavBar title="TextiFy" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
+        <Alert alert={alert} />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </>
+    </Router>
+      {/* <NavBar title="TextiFy" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
       <Alert alert={alert} />
       <div className="container">
         <TextForm showAlert={showAlert} heading="Enter The Text To Be Analyzed" isBold={isBold} setIsBold={setIsBold} mode1={mode} />
-      </div>
+      </div> */}
     </>
   );
 }
