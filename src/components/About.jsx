@@ -41,7 +41,7 @@ export default function About() {
     return (
 
         <>
-            <div className="accordian p-3" style={myStyle}>
+            <div className="accordian p-3 mx-5 my-5 rounded" style={myStyle}>
                 <h1 className="mx-3">About Us</h1>
                 <div className="accordion" id="accordionExample" style={myStyle}>
                     <div className="accordion-item">
@@ -82,11 +82,11 @@ export default function About() {
                     </div>
             </div>
 
-                </div>
             <div>
-            <button type="button" onClick={toggleLight}className="btn btn-dark my-3" style={btnStyle}>{btnText}</button>
+            <button  type="button" onClick={toggleLight}className="btn btn-dark my-3" style={btnStyle}>{btnText}</button>
 
             </div>
+                </div>
 
         </>
 
