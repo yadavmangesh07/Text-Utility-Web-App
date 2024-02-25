@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-
 export default function TextForm(props) {
   const [text, setText] = useState('');
   const [previewedText, setPreviewedText] = useState('');
   const [previewClicked, setPreviewClicked] = useState(false);
   const [isbold, setbold] = useState(false);
+  
 
   const upperCase = () => {
     if (text === '') {
@@ -158,6 +158,7 @@ export default function TextForm(props) {
     }
 
   }
+  
 
 
 
@@ -171,7 +172,7 @@ export default function TextForm(props) {
             <h1 className='my-3'>{props.heading}</h1>
 
             <div className="mb-3" my-3="true">
-              <textarea style={{ backgroundColor: props.mode1 === 'dark' ? '#D1E7DE' : 'white', fontSize: '17px' }}
+              <textarea style={{ backgroundColor: props.mode1 === 'light' ? '#D1E7DE' : 'white' }}
                 className="form-control color-black"
                 value={text}
                 placeholder="Enter Your Text Here.."

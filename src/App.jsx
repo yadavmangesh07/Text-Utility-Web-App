@@ -6,16 +6,12 @@ import React, { useState } from 'react';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import About from './components/About'; 
 
-// function Home() {
-//   return <TextForm heading="Enter The Text To Be Analyzed" />;
-// }
 
 
 function App() {
   const [mode, setMode] = useState('light');
   const [text, setText] = useState('dark');
   const [btnText, setBtnText] = useState('Dark');
-  const [isBold, setIsBold] = useState(false);
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
@@ -52,11 +48,11 @@ function App() {
      
        <BrowserRouter>
       <NavBar title="TextiFy" about="About" mode1={mode} textColor={text} buttonText={btnText} toggleMode={changeMode} />
+
       <Alert alert={alert} />
       <main>
-
       <Routes>
-      <Route path="/" element={<TextForm />} />
+      <Route path="/" element={<TextForm showAlert={showAlert}/>} />
       <Route path="/about" element={<About />} />
       </Routes>
       </main>
