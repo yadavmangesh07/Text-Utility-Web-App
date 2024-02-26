@@ -31,14 +31,15 @@ function App() {
       setText('dark');
       setBtnText('Dark');
       document.body.style.backgroundColor = "white";
-      document.body.style.color = "#212529";
+      document.body.style.color = "#23272F";
       showAlert('Light Mode Enabled', 'success');
     } else {
       setMode('dark');
       setText('light');
       setBtnText('Light');
-      document.body.style.backgroundColor = "#212529";
+      document.body.style.backgroundColor = "#23272F";
       document.body.style.color = "white";
+     
       showAlert('Dark Mode Enabled', 'success');
     }
   };
@@ -52,8 +53,8 @@ function App() {
       <Alert alert={alert} />
       <main>
       <Routes>
-      <Route path="/" element={<TextForm heading="Enter The Text To Be Analyzed" showAlert={showAlert}/>} />
-      <Route path="/about" element={<About />} />
+      <Route path="/" element={<TextForm heading="Enter The Text To Be Analyzed" showAlert={showAlert} mode1={mode}/>} />
+      <Route path="/about" element={<About mode1={mode}/>} />
       </Routes>
       </main>
       
