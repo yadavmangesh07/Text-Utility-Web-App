@@ -182,26 +182,26 @@ export default function TextForm(props) {
               ></textarea>
             </div>
 
-            <div className="primary-buttons" style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <button type="button" onClick={upperCase} className="btn btn-success">
+            <div className="primary-buttons" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '10px' }}>
+              <button type="button" onClick={upperCase} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1">
                 Convert To UpperCase
               </button>
-              <button type="button" onClick={lowerCase} className="btn btn-success">
+              <button type="button" onClick={lowerCase} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1">
                 Convert To LowerCase
               </button>
-              <button type="button" onClick={preview} className="btn btn-success ">
+              <button type="button" onClick={preview} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1 ">
                 Preview to read
               </button>
-              <button type="button" onClick={clearTextField} className="btn btn-success">
+              <button type="button" onClick={clearTextField} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1">
                 Clear Text Field
               </button>
-              <button type="button" onClick={copyToClipboard} className="btn btn-success ">
+              <button type="button" onClick={copyToClipboard} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1 ">
                 Copy to Clipboard
               </button>
-              <button type="button" onClick={makeBold} className="btn btn-success">
+              <button type="button" onClick={makeBold} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1">
                 Make Bold
               </button>
-              <button type="button" onClick={removeExtraSpaces} className="btn btn-success">
+              <button type="button" onClick={removeExtraSpaces} className="btn btn-success mx-2  mx-2 my-2 flex-grow-1">
                 Remove Extra Spaces
               </button>
             </div>

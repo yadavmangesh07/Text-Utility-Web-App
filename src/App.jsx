@@ -3,8 +3,9 @@ import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import About from './components/About'; 
+// import Footer from './components/Footer';
 
 
 
@@ -39,6 +40,7 @@ function App() {
       setBtnText('Light');
       document.body.style.backgroundColor = "#23272F";
       document.body.style.color = "white";
+      // document.body.navbar-toggler.style.color="white";
      
       showAlert('Dark Mode Enabled', 'success');
     }
@@ -53,10 +55,12 @@ function App() {
       <Alert alert={alert} />
       <main>
       <Routes>
-      <Route path="/" element={<TextForm heading="Enter The Text To Be Analyzed" showAlert={showAlert} mode1={mode}/>} />
+      <Route  path="/" element={<TextForm heading="Enter The Text To Be Analyzed" showAlert={showAlert} mode1={mode}/>} />
       <Route path="/about" element={<About mode1={mode}/>} />
       </Routes>
       </main>
+      
+     
       
        </BrowserRouter>
     </>
