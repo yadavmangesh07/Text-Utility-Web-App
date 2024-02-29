@@ -11,7 +11,7 @@ export default function NavBar(props) {
   
       <nav className="navbar navbar-expand-lg bg-body-primary " >
         <div className="container-fluid "  >
-          <a className={`navbar-brand text-${props.textColor}`} href="/"><h4>{props.title}</h4></a>
+          <Link className={`navbar-brand text-${props.textColor}`} to="/"><h4>{props.title}</h4></Link>
           <button className="navbar-toggler" style={{backgroundColor:props.mode1==='dark'?'white':'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -33,7 +33,7 @@ export default function NavBar(props) {
       </nav>
             <div className="form-check form-switch mx-3" >
               <input className="form-check-input " onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-              <label className={`form-check-label text-${props.textColor}`} htmlFor="flexSwitchCheckDefault">{props.buttonText} Mode</label>
+              <label className={`form-check-label text-${props.textColor}`} htmlFor="flexSwitchCheckDefault"><h5>{props.buttonText} Mode</h5></label>
             </div>
 </nav>
     </>
